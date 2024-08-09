@@ -1,17 +1,13 @@
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>출력결과</title>
-    </head>
-    <body>
-        <script>
-            function solution(s){  
-                let answer;
-           
-                return answer;
-            }
-            let str=["good", "time", "good", "time", "student"];
-            console.log(solution(str));
-        </script>
-    </body>
-</html>
+function solution(s) {
+    let answer = [];
+
+    for (let x of s) {
+        if (!answer.includes(x)) {
+            answer.push(x);
+        }
+    }
+
+    return answer;
+}
+let str = ['good', 'time', 'good', 'time', 'student'];
+console.log(solution(str));

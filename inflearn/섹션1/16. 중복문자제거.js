@@ -1,16 +1,12 @@
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>출력결과</title>
-    </head>
-    <body>
-        <script>
-            function solution(s){  
-                let answer="";
-             
-                return answer;
-            }
-            console.log(solution("ksekkset"));
-        </script>
-    </body>
-</html>
+function solution(s) {
+    let answer = '';
+
+    for (let x of s) {
+        if (!answer.includes(x)) {
+            answer += x;
+        }
+    }
+
+    return answer;
+}
+console.log(solution('ksekkset'));

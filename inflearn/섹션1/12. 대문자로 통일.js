@@ -1,20 +1,12 @@
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>출력결과</title>
-    </head>
-    <body>
-        <script>
-            function solution(s){         
-                let answer="";
-           
+function solution(s) {
+    let answer = '';
 
-                return answer;
+    for (let x of s) {
+        answer += x.toUpperCase();
+    }
 
-            }
+    return answer;
+}
 
-            let str="ItisTimeToStudy";
-            console.log(solution(str));
-        </script>
-    </body>
-</html>
+let str = 'ItisTimeToStudy';
+console.log(solution(str));

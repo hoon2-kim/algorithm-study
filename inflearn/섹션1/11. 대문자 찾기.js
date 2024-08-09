@@ -1,18 +1,14 @@
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>출력결과</title>
-    </head>
-    <body>
-        <script>
-            function solution(s){         
-                let answer=0;
-              
-                return answer;
-            }
+function solution(s) {
+    let answer = 0;
 
-            let str="KoreaTimeGood";
-            console.log(solution(str));
-        </script>
-    </body>
-</html>
+    for (let x of s) {
+        if (x === x.toUpperCase()) {
+            answer++;
+        }
+    }
+
+    return answer;
+}
+
+let str = 'KoreaTimeGood';
+console.log(solution(str));
