@@ -33,3 +33,22 @@ console.log(solution(arr));
 console.log(solution(arr2));
 console.log(solution2(arr));
 console.log(solution2(arr2));
+
+//
+
+// 정답 풀이
+function solution3(arr) {
+    let n = arr.length;
+    let answer = Array.from({ length: n }, () => 1);
+
+    for (let i = 0; i < n; i++) {
+        for (j = 0; j < n; j++) {
+            // arr[i]가 주인공
+            if (arr[j] > arr[i]) {
+                answer[i]++;
+            }
+        }
+    }
+
+    return answer;
+}

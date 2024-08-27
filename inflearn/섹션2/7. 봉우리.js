@@ -19,7 +19,7 @@ function solution(arr) {
                     j + dy >= 0 &&
                     i + dx < n &&
                     j + dy < n &&
-                    arr[i][j] < arr[i + dx][j + dy]
+                    arr[i][j] <= arr[i + dx][j + dy]
                 ) {
                     isMax = false;
                     break;
@@ -42,3 +42,35 @@ let arr = [
     [8, 7, 3, 5, 2],
 ];
 console.log(solution(arr));
+
+//
+
+// 정답 풀이
+function solution2(arr) {
+    let answer = 0;
+    let dx = [-1, 0, 1, 0];
+    let dy = [0, 1, 0, -1];
+    const n = arr.length;
+    for (let i = 0; i < n; i++) {
+        for (let j = 0; j < n; j++) {
+            let flag = 1;
+            for (let k = 0; k < 4; k++) {
+                let nx = i + dx[k]; // 행 좌표
+                let ny = j + dy[k]; // 열 좌표
+                if (
+                    nx >= 0 &&
+                    nx < n &&
+                    ny >= 0 &&
+                    ny < n &&
+                    arr[nx][ny] >= arr[i][j]
+                ) {
+                    flag = 0;
+                    break;
+                }
+            }
+            if (flag) answer++;
+        }
+    }
+
+    return answer;
+}
