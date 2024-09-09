@@ -23,3 +23,27 @@ console.log(solution(str));
 
 // reduce에서 초기값을 안넣었으니 a에 초기값인 배열 첫번째 값 ['B',3]을 넣고, b에 그다음 ['A',3]을 넣어서 비교([1]이니까 숫자로)
 // 이런식으로 비교해서 제일 큰 값만을 반환
+
+//
+
+// 정답 풀이
+function solution2(s) {
+    let answer;
+    let sH = new Map();
+    for (let x of s) {
+        if (sH.has(x)) {
+            sH.set(x, sH.get(x) + 1);
+        } else {
+            sH.set(x, 1);
+        }
+    }
+    let max = Number.MIN_SAFE_INTEGER;
+    for (let [key, val] of sH) {
+        if (val > max) {
+            max = val;
+            answer = key;
+        }
+    }
+
+    return answer;
+}

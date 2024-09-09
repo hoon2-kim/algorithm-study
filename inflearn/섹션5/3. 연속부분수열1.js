@@ -24,4 +24,38 @@ function solution(m, arr) {
 }
 
 let a = [1, 2, 1, 3, 1, 1, 1, 2];
+let a2 = [1, 1, 1, 2, 4];
+let a3 = [1, 2, 3, 1];
 console.log(solution(6, a));
+console.log(solution(6, a2));
+console.log(solution(3, a3));
+
+//
+
+// 정답 풀이
+function solution2(m, arr) {
+    let answer = 0;
+    let lt = 0;
+    let sum = 0;
+
+    // rt는 오른쪽 포인터
+    for (let rt = 0; rt < arr.length; rt++) {
+        sum += arr[rt];
+
+        if (sum === m) {
+            answer++;
+        }
+
+        while (sum >= m) {
+            sum -= arr[lt++];
+            if (sum === m) {
+                answer++;
+            }
+        }
+    }
+
+    return answer;
+}
+
+console.log(solution2(6, a2));
+console.log(solution2(3, a3));
