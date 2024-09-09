@@ -121,10 +121,7 @@ function compareMaps(map1, map2) {
     }
 
     for (let [key, val] of map1) {
-        if (!map2.has(key)) {
-            return false;
-        }
-        if (map2.get(key) !== val) {
+        if (!map2.has(key) || map2.get(key) !== val) {
             return false;
         }
     }
