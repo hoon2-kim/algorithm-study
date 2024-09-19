@@ -7,8 +7,8 @@ function solution(s) {
             // 숫자는 일단 스택에 넣는다.
             stack.push(Number(x));
         } else {
-            let pop2 = stack.pop();
-            let pop1 = stack.pop();
+            let pop2 = stack.pop(); // 먼저 제거된 뒤의 숫자
+            let pop1 = stack.pop(); // 그 후에 제거된 앞의 숫자
 
             switch (x) {
                 case '+':
