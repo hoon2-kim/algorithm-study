@@ -17,3 +17,25 @@ let b = 'CBDAGE';
 let c = 'CGEADB';
 console.log(solution(a, b));
 console.log(solution(a, c));
+
+//
+
+// 정답 풀이 - 큐
+function solution2(need, plan) {
+    let answer = 'YES';
+    let queue = need.split('');
+    for (let x of plan) {
+        if (queue.includes(x)) {
+            if (x !== queue.shift()) {
+                // 순서가 다르면
+                return 'NO';
+            }
+        }
+    }
+
+    if (queue.length > 0) {
+        return 'NO';
+    }
+
+    return answer;
+}

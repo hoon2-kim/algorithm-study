@@ -42,3 +42,20 @@ function solution2(s) {
     // 스택에 남아있는 문자를 합쳐서 반환
     return stack.join('');
 }
+
+//
+
+// 정답 풀이 - 스택
+function solution3(s) {
+    let answer;
+    let stack = [];
+    for (let x of s) {
+        if (x === ')') {
+            while (stack.pop() !== '(');
+        } else {
+            stack.push(x);
+        }
+    }
+    answer = stack.join('');
+    return answer;
+}

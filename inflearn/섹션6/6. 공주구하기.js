@@ -40,3 +40,24 @@ function solution2(n, k) {
 }
 
 console.log(solution(8, 3));
+
+//
+
+// 정답 풀이 - 큐
+function solution3(n, k) {
+    let answer;
+    let queue = Array.from({ length: n }, (v, i) => i + 1);
+    while (queue.length) {
+        for (let i = 1; i < k; i++) {
+            queue.push(queue.shift());
+        }
+        queue.shift();
+        if (queue.length === 1) {
+            answer = queue.shift();
+        }
+    }
+
+    return answer;
+}
+
+console.log(solution3(8, 3));

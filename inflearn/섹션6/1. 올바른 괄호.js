@@ -1,3 +1,4 @@
+// 만약 공간을 고려한다면 카운팅 방식 고려
 function solution(s) {
     let answer = 'YES';
     let stack = [];
@@ -28,3 +29,29 @@ let a = '(()(()))(()';
 let b = '(())(())()';
 console.log(solution(a));
 console.log(solution(b));
+
+//
+
+// 정답 풀이
+// 스택 - 선입후출
+function solution2(s) {
+    let answer = 'YES';
+    let stack = [];
+    for (let x of s) {
+        if (x === '(') {
+            stack.push(x);
+        } else {
+            if (stack.length === 0) {
+                return 'NO';
+            }
+            stack.pop();
+        }
+    }
+
+    // '('가 더 많은 경우
+    if (stack.length > 0) {
+        return 'NO';
+    }
+
+    return answer;
+}
