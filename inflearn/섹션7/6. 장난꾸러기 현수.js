@@ -1,6 +1,6 @@
 function solution(arr) {
     let answer = [];
-    let sortArr = arr.slice();
+    let sortArr = arr.slice(); // 복사
 
     sortArr.sort();
 

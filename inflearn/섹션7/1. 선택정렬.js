@@ -34,6 +34,7 @@ function solution2(arr) {
             if (arr[j] < arr[idx]) {
                 idx = j;
             }
+            // 스왑
             [arr[i], arr[idx]] = [arr[idx], arr[i]];
         }
     }
@@ -43,3 +44,6 @@ function solution2(arr) {
 
 let arr2 = [13, 5, 11, 7, 23, 15];
 console.log(solution2(arr2));
+
+// 선택정렬이란?
+// 가장 작은 값을 탐색한 다음 swap을 통해 앞부분에 배치시키는 방식 O(n^2)
